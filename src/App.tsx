@@ -1,6 +1,30 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+
+function axiosDemo () {
+  axios.get("http://google.com")
+    .then(response => response.data)
+    .catch(e => console.error(e));
+
+  const data = {
+    a: "A",
+    b: "b"
+  };
+
+  axios.post("http://xyz", data)
+    .then(response => response.data)
+    .catch(e => console.error(e));
+
+  axios.put("http://xyz", data)
+    .then(response => response.data)
+    .catch(e => console.error(e));
+
+  axios.delete("http://xyz")
+    .then(response => response.data)
+    .catch(e => console.error(e))
+}
 
 function App() {
   return (
